@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: FirstPage(
-          title: 'Electrical Device Surveillance and Controll System'),
+          title: 'Electrical Device Surveillance and Control System'),
     );
   }
 }
