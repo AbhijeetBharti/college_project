@@ -35,7 +35,7 @@ dependencies:
   shared_preferences: ^0.5.6+1
   firebase_database: ^3.1.1
   liquid_progress_indicator: ^0.3.2
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.0
   lite_rolling_switch: ^0.1.1
 
 

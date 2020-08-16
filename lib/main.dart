@@ -1,3 +1,4 @@
+import 'package:collegeproject/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
@@ -22,8 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: FirstPage(
-          title: 'Electrical Device Surveillance and Control System'),
+      home: SplashScreen(),
     );
   }
 }

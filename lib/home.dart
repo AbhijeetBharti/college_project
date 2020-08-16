@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     ListView.builder(
                         shrinkWrap: true,
+                        reverse: true,
                         itemCount: Statuslists.length - 1,
                         itemBuilder: (BuildContext context, int index) {
                           return Card(
@@ -56,12 +57,12 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 buildRow(
-                                  Polelists[index].toString(),
-                                  Statuslists[index]["switchStatus"]
-                                      ? 'lib/assets/icons8-light-on-64.png'
-                                      : 'lib/assets/icons8-light-40.png',
-                                  Statuslists[index]["switchStatus"],
-                                ),
+                                    Polelists[index].toString(),
+                                    Statuslists[index]["switchStatus"]
+                                        ? 'lib/assets/icons8-light-on-64.png'
+                                        : 'lib/assets/icons8-light-40.png',
+                                    Statuslists[index]["switchStatus"],
+                                    index),
                               ],
                             ),
                           );
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Row buildRow(String poleNo, String path, bool switchStatus) {
+  Row buildRow(String poleNo, String path, bool switchStatus, int index) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
@@ -144,8 +145,11 @@ class _HomePageState extends State<HomePage> {
             onChanged: (bool state) {
               //Use it to manage the different states
               dbRef.update({poleNo + '/switchStatus': state});
+            },
+            onTap: () {
               setState(() {
-                switchStatus = state;
+                Statuslists[index]["switchStatus"] =
+                    !Statuslists[index]["switchStatus"];
               });
             },
           ),
